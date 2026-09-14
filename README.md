@@ -1,4 +1,4 @@
-# Real-ATS-Resume-Analyzer
+# AI-Powered Resume Analyzer 
 
 An ATS (Applicant Tracking System) style resume analyzer that compares a resume against a job description, scores the match, and highlights missing keywords/skills so you can improve your resume before applying.
 
