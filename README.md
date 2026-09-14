@@ -1,116 +1,129 @@
-🚀 Real-ATS-Resume-Analyzer
+# Real-ATS-Resume-Analyzer
 
-An AI-powered Resume Analyzer that evaluates resumes based on ATS (Applicant Tracking System) standards, job roles, and skills matching. It provides actionable insights including ATS score, keyword gaps, strengths, weaknesses, and improvement suggestions.
+An ATS (Applicant Tracking System) style resume analyzer that compares a resume against a job description, scores the match, and highlights missing keywords/skills so you can improve your resume before applying.
 
-📌 Features
-📊 ATS Score Calculation (Role-based)
-🔍 Skill Matching using TF-IDF + Regex
-🤖 AI Feedback using LLM (OpenRouter)
-📈 Semantic Similarity Analysis
-📝 Resume Summary Generation
-⚡ Keyword Gap Identification
-🎯 Role-based Evaluation (Data Analyst, ML Engineer, etc.)
-📌 Experience Level Weighting
-Entry Level → 0.6
-Moderate → 0.8
-Experienced → 1.0
-🧠 How It Works
-Upload your resume (PDF)
-Enter:
-Job Role
-Experience Level
-(Optional) Job Description
-System performs:
-Skill extraction
-Role-based matching
-Semantic similarity scoring
-AI-based evaluation
-Outputs:
-ATS Score
-Strengths & Weaknesses
-Improvement Suggestions
-Missing Keywords
-🏗️ Tech Stack
-Backend: Flask
-Frontend: HTML, CSS (Glass UI, Poppins)
-AI/ML:
-TF-IDF (Scikit-learn)
-Cosine Similarity
-Optional Sentence Transformers
-LLM Integration: OpenRouter API
-PDF Processing: pdfplumber
-Database (optional): MySQL
-📂 Project Structure
+> **Note:** This README assumes a Python + Streamlit + NLP stack (spaCy/NLTK, PyPDF2/python-docx). Update the sections below if your actual stack differs.
+
+---
+
+## Features
+
+- 📄 Parse resumes in PDF and DOCX format
+- 🧠 NLP-based keyword and skill extraction
+- 🎯 ATS match score against a target job description
+- 💡 Suggestions to improve keyword coverage
+- 🖥️ Simple web interface (Streamlit)
+
+---
+
+## Installation & Setup
+
+**[Install Python]** https://www.python.org/downloads/
+
+**[Install pip]**
+
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+
+```bash
+python3 get-pip.py
+```
+
+Ensure pip is installed by running the following command
+
+```bash
+pip --version
+```
+
+If you have Python & pip installed then check their version in the terminal or command line tools
+
+```bash
+python3 --version
+```
+
+```bash
+pip --version
+```
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/Real-ATS-Resume-Analyzer.git
+cd Real-ATS-Resume-Analyzer
+```
+
+---
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If you're using spaCy, download the language model:
+
+```bash
+python3 -m spacy download en_core_web_sm
+```
+
+---
+
+## Usage
+
+Run the app locally:
+
+```bash
+streamlit run app.py
+```
+
+Then open the local URL shown in your terminal (usually `http://localhost:8501`).
+
+### Basic Workflow
+
+1. Upload your resume (PDF/DOCX)
+2. Paste the job description you're applying for
+3. Click **Analyze**
+4. View your ATS match score and keyword suggestions
+
+---
+
+## Project Structure
+
+```
 Real-ATS-Resume-Analyzer/
-│
-├── app.py
-├── analyze_resume.py
-├── templates/
-│   └── index.html
-├── static/
-│   └── styles.css
-├── utils/
-│   ├── skills_db.py
-│   └── role_skills.py
-├── uploads/
-├── .env
+├── app.py                 # Main Streamlit app
+├── resume_parser.py       # Resume text extraction logic
+├── ats_scorer.py          # Matching & scoring logic
+├── utils/                 # Helper functions
 ├── requirements.txt
 └── README.md
-⚙️ Installation
-# Clone the repository
-git clone https://github.com/Sumit7568/Real-ATS-Resume-Analyzer.git
+```
 
-# Navigate to project
-cd Real-ATS-Resume-Analyzer
+---
 
-# Create virtual environment
-python -m venv venv
+## Tech Stack
 
-# Activate environment
-# Windows
-venv\Scripts\activate
+- **Language:** Python
+- **NLP:** spaCy / NLTK
+- **Resume Parsing:** PyPDF2, python-docx
+- **Interface:** Streamlit
 
-# Install dependencies
-pip install -r requirements.txt
-🔑 Environment Variables
+---
 
-Create a .env file:
+## Contributing
 
-OPENROUTER_API_KEY=your_api_key_here
-▶️ Run the Application
-python app.py
+Contributions are welcome! Please open an issue or submit a pull request.
 
-Visit:
-👉 http://127.0.0.1:5000
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Push and open a PR
 
-📊 Scoring Logic
-Component	Weight
-Skill Matching	30%
-LLM Feedback	35%
-Role-based ATS Score	40%
-📸 UI Highlights
-Modern Glass UI
-Clean input layout (row-wise)
-Interactive result dashboard
-🚧 Future Improvements
-✅ Add Resume Parsing with NLP
-✅ Improve keyword extraction using embeddings
-🔄 Add Resume Download with suggestions
-🔄 Multi-role comparison
-🔄 Dashboard analytics
-🤝 Contributing
+---
 
-Contributions are welcome! Feel free to fork the repo and submit a PR.
+## License
 
-📜 License
-
-This project is open-source and available under the MIT License.
-
-👨‍💻 Author
-
-Sumit Raj
-🔗 GitHub: https://github.com/Sumit7568
-
-⭐ Support
-
-If you like this project, give it a ⭐ on GitHub!
+This project is licensed under the MIT License.
