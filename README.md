@@ -1,6 +1,6 @@
 # AI-Powered Resume Analyzer 
 
-https://repository-images.githubusercontent.com/1024648272/c2f784fc-d220-452c-a2b2-f1601abdd536
+https://github.com/topics/ai-resume-analyzer
 
 An ATS (Applicant Tracking System) style resume analyzer that compares a resume against a job description, scores the match, and highlights missing keywords/skills so you can improve your resume before applying.
 
